@@ -13,31 +13,15 @@ class RunSubmitRerunTestClass(BaseTestClass):
         self.variablesObj = VariablesClass()
         self.verifyPageObj = VerifyPageClass(self.driver, self.debugMode, self.sleepTime)
 
-    # Davit
-    def test_verify_child1(self):
+    def test_verify_submission(self):
         if self.debugMode:
             print("Info: Opening the verify page url:", self.variablesObj.checkSubmissionPageUrl)
             time.sleep(self.sleepTime)
         self.driver.get(self.variablesObj.checkSubmissionPageUrl)
-        self.verifyPageObj.fill_child_soc_card(self.variablesObj.childSocialCard)
-        self.verifyPageObj.click_submit_button()
-
-    # Gayane
-    def test_verify_child2(self):
+        self.verifyPageObj.fill_child_soc_card()
         if self.debugMode:
-            print("Info: Opening the verify page url:", self.variablesObj.checkSubmissionPageUrl)
+            print("Info: Filling child soc card number:", self.variablesObj.childSocialCard)
             time.sleep(self.sleepTime)
-        self.driver.get(self.variablesObj.checkSubmissionPageUrl)
-        self.verifyPageObj.fill_child_soc_card(self.variablesObj.childSocialCard2)
-        self.verifyPageObj.click_submit_button()
-
-    # Hayk
-    def test_verify_child3(self):
-        if self.debugMode:
-            print("Info: Opening the verify page url:", self.variablesObj.checkSubmissionPageUrl)
-            time.sleep(self.sleepTime)
-        self.driver.get(self.variablesObj.checkSubmissionPageUrl)
-        self.verifyPageObj.fill_child_soc_card(self.variablesObj.childSocialCard3)
         self.verifyPageObj.click_submit_button()
 
     def tearDown(self):
