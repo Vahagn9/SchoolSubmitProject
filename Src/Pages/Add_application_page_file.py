@@ -19,7 +19,7 @@ class AddApplicationPageClass(BasePageClass):
             availablePlacesText = availablePlacesElem.text
             filledPlaces, allPlaces = [int(char.strip()) for char in availablePlacesText.split("/")]
             availablePlaces = allPlaces - filledPlaces
-            print(f"Vacation info at the moment: {availablePlaces} Available / from {allPlaces}")
+            print(f"Information about current vacancies: {availablePlaces} Available / from {allPlaces}")
             if availablePlaces < 1:
                 print("Warning: No available places left :(")
                 retVal = False
