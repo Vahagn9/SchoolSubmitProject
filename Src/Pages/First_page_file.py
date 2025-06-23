@@ -18,7 +18,7 @@ class FirstPageClass(BasePageClass):
     def select_marz_by_visible_text(self, marzName: str = None):
         if marzName is None:
             marzName = self.variablesObj.marz
-        marzDropdownElem = self.find.custom_find_element(self.locators.marzDropdownLocator)
+        marzDropdownElem = self.find.custom_find_element(self.locators.marzDropdownLocator, 5)
         selectElem = Select(marzDropdownElem)
         selectElem.select_by_visible_text(marzName)
         if self.debugMode:
