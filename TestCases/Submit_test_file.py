@@ -1,5 +1,6 @@
 import functools
 import time
+import traceback
 from Base_test_file import BaseTestClass
 from Src.Pages.First_page_file import FirstPageClass
 from Src.Pages.Add_application_page_file import AddApplicationPageClass
@@ -50,7 +51,10 @@ class SubmitTestClass(BaseTestClass):
                         print("Warning: Should not be an alert.")
                 except Exception as ec:
                     print("Submit attempt num:", tryCounter, "Failed")
-                    print("Error:", ec)
+                    if self.debugMode:
+                        traceback.print_exc()
+                    else:
+                        print("Error:", ec)
                 else:
                     succeeded = True
                     print("Successfully submitted !!!")
